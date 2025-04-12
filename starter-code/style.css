@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+
+    --grey-950: #08070B;
+    --grey-900: #14131B;
+    --grey-850: #18171F;
+    --grey-800: #24232C;
+    --grey-700: #54535B;
+    --grey-600: #817D92;
+    --grey-200: #e6e5ea;
+
+    --green-200: #a4ffaf;
+    --yellow-300: #f8cd65;
+    --orange-400: #fb7c58;
+    --red-500: #f64a4a;
+
+    --gradient-color-1: #14131b;
+    --gradient-color-2: #08070B;
+}
