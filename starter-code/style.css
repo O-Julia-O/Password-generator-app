@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+
+    --grey-950: #08070B;
+    --grey-900: #14131B;
+    --grey-850: #18171F;
+    --grey-800: #24232C;
+    --grey-700: #54535B;
+    --grey-600: #817D92;
+    --grey-200: #e6e5ea;
+
+    --green-200: #a4ffaf;
+    --yellow-300: #f8cd65;
+    --orange-400: #fb7c58;
+    --red-500: #f64a4a;
+
+    --gradient-color-1: #14131b;
+    --gradient-color-2: #08070B;
+
+    --spacing-100: 8px;
+    --spacing-200: 16px;
+    --spacing-300: 24px;
+    --spacing-400: 32px;
+    --spacing-700: 56px;
+    --spacing-1000: 80px;
+    --spacing-1300: 104px;
+    --spacing-1600: 128px;
+    --spacing-2000: 160px;
+    --spacing-2200: 176px;
+    --spacing-2300: 184px;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('/starter-code/assets/fonts/JetBrainsMono-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('/starter-code/assets/fonts/JetBrainsMono-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+}
+  
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('/starter-code/assets/fonts/static/JetBrainsMono-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('/starter-code/assets/fonts/static/JetBrainsMono-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: var(--grey-950);
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0;
+    color: white;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+/* .textPreset1 {
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 42px;
+    letter-spacing: 0;
+}
+
+.textPreset2 {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0;
+}
+
+.textPreset3 {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0;
+}
+
+.textPreset4 {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0;
+} */
+
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    padding: 1rem;
+    background-color: var(--grey-800);
+}
+
+.password-generator {
+    width: 100%;
+    gap: 1rem;
+    margin: var(--spacing-700) var(--spacing-200);
+}
+
+.password-generator__title {
+    color: var(--grey-600);
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 20px;
+    letter-spacing: 0;
+}
+
+.settings-length {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto; 
+}
+
+.settings__slider {
+    width: 100%;
+}
