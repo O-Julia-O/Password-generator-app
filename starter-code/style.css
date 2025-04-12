@@ -23,6 +23,18 @@
 
     --gradient-color-1: #14131b;
     --gradient-color-2: #08070B;
+
+    --spacing-100: 8px;
+    --spacing-200: 16px;
+    --spacing-300: 24px;
+    --spacing-400: 32px;
+    --spacing-700: 56px;
+    --spacing-1000: 80px;
+    --spacing-1300: 104px;
+    --spacing-1600: 128px;
+    --spacing-2000: 160px;
+    --spacing-2200: 176px;
+    --spacing-2300: 184px;
 }
 
 @font-face {
