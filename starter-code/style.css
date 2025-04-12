@@ -24,3 +24,39 @@
     --gradient-color-1: #14131b;
     --gradient-color-2: #08070B;
 }
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('/starter-code/assets/fonts/JetBrainsMono-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('/starter-code/assets/fonts/JetBrainsMono-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+}
+  
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('/starter-code/assets/fonts/static/JetBrainsMono-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('/starter-code/assets/fonts/static/JetBrainsMono-BoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+body {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.textPreset1 {
+
+}
