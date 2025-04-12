@@ -133,6 +133,37 @@ main {
     letter-spacing: 0;
 }
 
+.password-generator__output {
+    display: flex;
+}
+
+.output__text {
+    background-color: var(--grey-800);
+    height: 100%;
+    width: 100%;
+    border: none;
+    color: var(--grey-700);
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0;
+
+    user-select: none;
+    pointer-events: none;
+}
+
+.output__copy-btn {
+    fill: var(--green-200);
+    background-color: var(--grey-800);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.output__copy-btn:hover svg{
+    fill: var(--white-color);
+}
+
 .settings-length {
     display: grid;
     grid-template-columns: 1fr auto;
