@@ -296,3 +296,31 @@ main {
 .checkbox input[type="checkbox"]:hover + .custom-check {
     border: 2px solid var(--green-200);
 }
+
+/* button Generate */
+
+.password-generator__button {
+    background-color: var(--green-200);
+    padding: 18px;
+    color: var(--grey-800);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    border: none;
+}
+
+.password-generator__button svg {
+    margin-left: 10px;
+    fill: var(--grey-800);
+}
+
+.password-generator__button:hover {
+    border: 1px solid var(--green-200);
+    background: transparent;
+    color: var(--green-200);
+}
+
+.password-generator__button:hover svg {
+    fill: var(--green-200);
+}
