@@ -251,3 +251,13 @@ main {
     cursor: pointer;
     margin-top: -6px;
 }
+
+/* checkboxes */
+
+.settings__checkboxes {
+    margin-top: var(--spacing-400);
+    margin-bottom: var(--spacing-400);
+    gap: var(--spacing-200);
+}
+
+.checkbox {
