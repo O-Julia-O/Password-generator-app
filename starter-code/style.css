@@ -262,8 +262,9 @@ main {
 
 .checkbox {
     cursor: pointer;
-    gap: 12px;
+    gap: 4px;
     position: relative;
+    flex-direction: row;
 }
 
 .checkbox input[type="checkbox"] {
