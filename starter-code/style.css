@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: content-box;
     user-select: none;
 }
 
@@ -299,15 +299,21 @@ main {
 
 /* button Generate */
 
+.button__container {
+    background-color: white;
+}
+
 .password-generator__button {
     background-color: var(--green-200);
-    padding: 18px;
+    padding-top: 18px;
+    padding-bottom: 18px;
     color: var(--grey-800);
     text-transform: uppercase;
     font-weight: bold;
     font-size: 16px;
     line-height: 20px;
     border: none;
+    width: 100%;
 }
 
 .password-generator__button svg {
@@ -323,4 +329,33 @@ main {
 
 .password-generator__button:hover svg {
     fill: var(--green-200);
+}
+
+/* progress bar */
+
+.password-generator__strength {
+    background-color: var(--grey-850);
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.strength__label {
+    color: var(--grey-600);
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 0;
+}
+
+.strength__container {
+    display: flex;
+    gap: 8px;
+}
+
+.strength__bar {
+    border: 1px solid white;
+    width: 10px;
+    height: 28px;
 }
