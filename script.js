@@ -18,6 +18,7 @@ function updateSliderBackground(el) {
 slider.addEventListener('input', function () {
     updateSliderBackground(this);
     sliderValue.textContent = this.value;
+    checkPasswordComplexity(lengthCharacters, sumCheckboxes)
 });
 
 updateSliderBackground(slider);
