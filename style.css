@@ -40,28 +40,28 @@
 
 @font-face {
     font-family: 'JetBrains Mono';
-    src: url('/starter-code/assets/fonts/JetBrainsMono-VariableFont_wght.ttf') format('truetype');
+    src: url('assets/fonts/JetBrainsMono-VariableFont_wght.ttf') format('truetype');
     font-weight: 100 900;
     font-style: normal;
 }
   
 @font-face {
     font-family: 'JetBrains Mono';
-    src: url('/starter-code/assets/fonts/JetBrainsMono-Italic-VariableFont_wght.ttf') format('truetype');
+    src: url('assets/fonts/JetBrainsMono-Italic-VariableFont_wght.ttf') format('truetype');
     font-weight: 100 900;
     font-style: italic;
 }
   
 @font-face {
     font-family: 'JetBrains Mono';
-    src: url('/starter-code/assets/fonts/static/JetBrainsMono-Bold.ttf') format('truetype');
+    src: url('assets/fonts/static/JetBrainsMono-Bold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
   
 @font-face {
     font-family: 'JetBrains Mono';
-    src: url('/starter-code/assets/fonts/static/JetBrainsMono-BoldItalic.ttf') format('truetype');
+    src: url('assets/fonts/static/JetBrainsMono-BoldItalic.ttf') format('truetype');
     font-weight: 700;
     font-style: italic;
 }
