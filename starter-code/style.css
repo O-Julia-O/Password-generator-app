@@ -121,7 +121,6 @@ main {
 
 .password-generator {
     width: 100%;
-    gap: 1rem;
     margin: var(--spacing-700) var(--spacing-200);
 }
 
@@ -136,9 +135,11 @@ main {
 
 .password-generator__output {
     display: flex;
+    margin-bottom: 1rem;
 }
 
 .output__text {
+    font-family: inherit;
     background-color: var(--grey-800);
     height: 100%;
     width: 100%;
@@ -300,7 +301,10 @@ main {
 /* button Generate */
 
 .button__container {
-    background-color: white;
+    background-color: var(--grey-800);
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
 }
 
 .password-generator__button {
