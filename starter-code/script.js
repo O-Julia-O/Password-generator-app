@@ -8,7 +8,7 @@ const rangBgColor = {
 
 function updateSliderBackground(el) {
     const value = (el.value - el.min) / (el.max - el.min) * 100;
-el.style.background = `linear-gradient(90deg,
+    el.style.background = `linear-gradient(90deg,
         ${rangBgColor.bgColorA} 0%,
         ${rangBgColor.bgColorA} ${value}%,
         ${rangBgColor.bgColorB} ${value}%,
@@ -17,8 +17,7 @@ el.style.background = `linear-gradient(90deg,
 
 slider.addEventListener('input', function () {
     updateSliderBackground(this);
-    console.log(slider.value);
-    sliderValue.textContent = `${slider.value}`;
+    sliderValue.textContent = this.value;
 });
 
 updateSliderBackground(slider);
