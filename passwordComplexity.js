@@ -36,30 +36,33 @@ function sumCheckboxes() {
 
 /* Check password complexity */
 function checkPasswordComplexity(lengthCharacters, sumCheckboxes) {
-    // Сначала сбросим все классы
-    progressBar.forEach(bar => {
-        bar.classList = "";
-        bar.className = "strength__bar";
-    });
-    
-    if (lengthCharacters <= 5 && sumCheckboxes <= 1) {
-        progressBar[0].classList.add("bg-red");
+    // Reset all bars
+  progressBar.forEach(bar => {
+    bar.className = "strength__bar";
+  });
 
-    } else if (lengthCharacters >= 6 && lengthCharacters <= 11 && sumCheckboxes >= 2) {
-        for (let i = 0; i < 2; i++) {
-        progressBar[i].classList.add("bg-yellow");
-        }
+  // SIMPLE (weakest): short or only 1 type
+  if (lengthCharacters < 8 || sumCheckboxes === 1) {
+    progressBar[0].classList.add("bg-red");
+    return;
+  }
 
-    } else if (lengthCharacters >= 12 && lengthCharacters <= 15 && sumCheckboxes >= 3) {
-        for (let i = 0; i < 3; i++) {
-        progressBar[i].classList.add("bg-orange");
-        }
-
-    } else if (lengthCharacters >= 16 && sumCheckboxes === 4) {
-        for (let i = 0; i < 4; i++) {
-        progressBar[i].classList.add("bg-green");
-        }
+  // STRONG (green)
+if (lengthCharacters >= 16 && sumCheckboxes === 4) {
+    for (let i = 0; i < 4; i++) {
+      progressBar[i].classList.add("bg-green");
     }
+  } else if (lengthCharacters >= 12 && sumCheckboxes >= 3) {
+    for (let i = 0; i < 3; i++) {
+      progressBar[i].classList.add("bg-yellow");
+    }
+  } else if (lengthCharacters >= 8 && sumCheckboxes >= 2) {
+    for (let i = 0; i < 2; i++) {
+      progressBar[i].classList.add("bg-orange");
+    }
+  } else {
+    progressBar[0].classList.add("bg-red");
+  }
 }
 
 
