@@ -41,6 +41,7 @@ function checkPasswordComplexity(lengthCharacters, sumCheckboxes) {
   // SIMPLE (weakest): short or only 1 type
   if (lengthCharacters < 8 || sumCheckboxes === 1) {
     progressBar[0].classList.add("bg-red");
+    lvlField.textContent = arrayOfComplexity[0];
     return;
   }
 
@@ -48,7 +49,7 @@ function checkPasswordComplexity(lengthCharacters, sumCheckboxes) {
 if (lengthCharacters >= 16 && sumCheckboxes === 4) {
     for (let i = 0; i < 4; i++) {
       progressBar[i].classList.add("bg-green");
-      lvlField.textContent = arrayOfComplexity[3];
+      /* lvlField.textContent = arrayOfComplexity[3]; */
     }
   } else if (lengthCharacters >= 12 && sumCheckboxes >= 3) {
     for (let i = 0; i < 3; i++) {
@@ -62,7 +63,6 @@ if (lengthCharacters >= 16 && sumCheckboxes === 4) {
     }
   } else {
     progressBar[0].classList.add("bg-red");
-    lvlField.textContent = arrayOfComplexity[0];
   }
 }
 
