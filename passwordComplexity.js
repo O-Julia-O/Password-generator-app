@@ -15,7 +15,6 @@ checkboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", () => {
         /* Every time when "click" we got a number of checked checkboxes*/
         quantityCheckboxes = sumCheckboxes(); 
-        console.log(checkbox.)
         checkPasswordComplexity(slider.value, quantityCheckboxes);
     });
 });
