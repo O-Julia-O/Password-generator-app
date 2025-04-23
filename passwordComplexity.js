@@ -3,21 +3,27 @@ const checkboxes = document.querySelectorAll(".checkbox__input");
 const createBtn = document.querySelector(".password-generator__button");
 const progressBar = document.querySelectorAll(".strength__bar");
 const lvlField = document.querySelector(".strength__lvl-complexity");
+const outputText = document.querySelector(".output__text");
 
 const arrayOfComplexity = ["WEAK", "SIMPLE", "MEDIUM", "STRONG"];
 let quantityCheckboxes = 0;
+/* array of chosen checkboxes */
+let chosenCheckboxesArray
 
 /* Listeners */
 checkboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", () => {
         /* Every time when "click" we got a number of checked checkboxes*/
         quantityCheckboxes = sumCheckboxes(); 
+        console.log(checkbox.)
         checkPasswordComplexity(slider.value, quantityCheckboxes);
     });
 });
 
 createBtn.addEventListener("click", () => {
     /* when the button pressed  */
+    //let password = generatePassword([1,2,3], 15);
+    outputText.value = "4385794";
 });
 
 slider.addEventListener("change", () => {
@@ -66,5 +72,11 @@ if (lengthCharacters >= 16 && sumCheckboxes === 4) {
   }
 }
 
+/* generate password */
+/* array of chosen checkboxes, character length */
+function generatePassword(array, length) {
+  
+  return 7546584;
+}
 
 checkPasswordComplexity(slider.value, sumCheckboxes);
