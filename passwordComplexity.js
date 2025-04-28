@@ -12,9 +12,15 @@ let chosenCheckboxesArray
 
 /* Listeners */
 checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener("change", () => {
+    checkbox.addEventListener("change", (event) => {
+      const cb = event.target; //input not label
+      const value = cb.name;             // или cb.name / cb.value
+      const state = cb.checked;     // true = включен, false = отжат
+/* FIXME here I need to find out how to get the name of checkboxes and collect them into array  */
+
         /* Every time when "click" we got a number of checked checkboxes*/
         quantityCheckboxes = sumCheckboxes(); 
+        console.log(`Чекбокс "${value}" был ${state ? 'нажат ✅' : 'отжат ❌'}`);
         checkPasswordComplexity(slider.value, quantityCheckboxes);
     });
 });
@@ -75,6 +81,7 @@ if (lengthCharacters >= 16 && sumCheckboxes === 4) {
 /* array of chosen checkboxes, character length */
 function generatePassword(array, length) {
   
+
   return 7546584;
 }
 
