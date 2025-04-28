@@ -8,7 +8,7 @@ const outputText = document.querySelector(".output__text");
 const arrayOfComplexity = ["WEAK", "SIMPLE", "MEDIUM", "STRONG"];
 let quantityCheckboxes = 0;
 /* array of chosen checkboxes */
-let chosenCheckboxesArray
+let chosenCheckboxesArray = [];
 
 /* Listeners */
 checkboxes.forEach((checkbox) => {
@@ -16,7 +16,6 @@ checkboxes.forEach((checkbox) => {
       const cb = event.target; //input not label
       const value = cb.name;             // или cb.name / cb.value
       const state = cb.checked;     // true = включен, false = отжат
-/* FIXME here I need to find out how to get the name of checkboxes and collect them into array  */
 
         /* Every time when "click" we got a number of checked checkboxes*/
         quantityCheckboxes = sumCheckboxes(); 
@@ -28,6 +27,17 @@ checkboxes.forEach((checkbox) => {
 createBtn.addEventListener("click", () => {
     /* when the button pressed  */
     //let password = generatePassword([1,2,3], 15);
+    chosenCheckboxesArray = [];
+
+    /* add checkboxes to the array  */
+    checkboxes.forEach((checkbox) => {
+      if (checkbox.checked) {
+          chosenCheckboxesArray.push(checkbox.name);
+      }
+    })
+    console.log(slider.value)
+    console.log(chosenCheckboxesArray);
+
     outputText.value = "4385794";
 });
 
@@ -80,8 +90,24 @@ if (lengthCharacters >= 16 && sumCheckboxes === 4) {
 /* generate password */
 /* array of chosen checkboxes, character length */
 function generatePassword(array, length) {
-  
+  // password
+  let password = 0;
 
+  if (array.find((item) => item === "Uppercase")) {
+
+  }
+
+  if (array.find((item) => item === "Lovercase")) {
+    
+  }
+
+  if (array.find((item) => item === "Numbers")) {
+    
+  }
+
+  if (array.find((item) => item === "Symbols")) {
+    
+  }
   return 7546584;
 }
 
