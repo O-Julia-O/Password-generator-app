@@ -8,13 +8,18 @@ const outputText = document.querySelector(".output__text");
 const arrayOfComplexity = ["WEAK", "SIMPLE", "MEDIUM", "STRONG"];
 let quantityCheckboxes = 0;
 /* array of chosen checkboxes */
-let chosenCheckboxesArray
+let chosenCheckboxesArray = [];
 
 /* Listeners */
 checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener("change", () => {
+    checkbox.addEventListener("change", (event) => {
+      const cb = event.target; //input not label
+      const value = cb.name;             // или cb.name / cb.value
+      const state = cb.checked;     // true = включен, false = отжат
+
         /* Every time when "click" we got a number of checked checkboxes*/
         quantityCheckboxes = sumCheckboxes(); 
+        console.log(`Чекбокс "${value}" был ${state ? 'нажат ✅' : 'отжат ❌'}`);
         checkPasswordComplexity(slider.value, quantityCheckboxes);
     });
 });
@@ -22,7 +27,19 @@ checkboxes.forEach((checkbox) => {
 createBtn.addEventListener("click", () => {
     /* when the button pressed  */
     //let password = generatePassword([1,2,3], 15);
-    outputText.value = "4385794";
+    chosenCheckboxesArray = [];
+
+    /* add checkboxes to the array  */
+    checkboxes.forEach((checkbox) => {
+      if (checkbox.checked) {
+          chosenCheckboxesArray.push(checkbox.name);
+      }
+    })
+    console.log(slider.value)
+    console.log(chosenCheckboxesArray);
+
+    /* generate password */
+    outputText.value = generatePassword(chosenCheckboxesArray, slider.value);
 });
 
 slider.addEventListener("change", () => {
@@ -74,8 +91,53 @@ if (lengthCharacters >= 16 && sumCheckboxes === 4) {
 /* generate password */
 /* array of chosen checkboxes, character length */
 function generatePassword(array, length) {
-  
-  return 7546584;
+  // password
+  let password = "";
+
+  const types = {
+    Uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    Lovercase: "abcdefghijklmnopqrstuvwxyz",
+    Numbers: "0123456789",
+    Symbols: "!@#$%^&*()_+[]{}|;:,.<>?",
+  };
+
+  // Ensure at least one character from each selected type
+  array.forEach((type) => {
+    if (types[type]) {
+      password += getRandomCharacter(type);
+    }
+  });
+
+  // Fill the rest of the password to match the desired length
+  const allSelectedCharacters = array
+    .map((type) => types[type])
+    .join("");
+
+  while (password.length < length) {
+    password += allSelectedCharacters[
+      Math.floor(Math.random() * allSelectedCharacters.length)
+    ];
+  }
+
+  // Shuffle the password to make it more random
+  password = password
+    .split("")
+    .sort(() => Math.random() - 0.5)
+    .join("");
+
+  console.log(password);
+  return password;
+}
+
+function getRandomCharacter(type) {
+  const types = {
+    Uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    Lovercase: "abcdefghijklmnopqrstuvwxyz",
+    Numbers: "0123456789",
+    Symbols: "!@#$%^&*()_+[]{}|;:,.<>?",
+  };
+
+  return types[type][Math.floor(Math.random() * types[type].length)];
 }
 
 checkPasswordComplexity(slider.value, sumCheckboxes);
