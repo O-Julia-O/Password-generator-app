@@ -38,7 +38,8 @@ createBtn.addEventListener("click", () => {
     console.log(slider.value)
     console.log(chosenCheckboxesArray);
 
-    outputText.value = "4385794";
+    /* generate password */
+    outputText.value = generatePassword(chosenCheckboxesArray, slider.value);
 });
 
 slider.addEventListener("change", () => {
@@ -91,24 +92,52 @@ if (lengthCharacters >= 16 && sumCheckboxes === 4) {
 /* array of chosen checkboxes, character length */
 function generatePassword(array, length) {
   // password
-  let password = 0;
+  let password = "";
 
-  if (array.find((item) => item === "Uppercase")) {
+  const types = {
+    Uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    Lovercase: "abcdefghijklmnopqrstuvwxyz",
+    Numbers: "0123456789",
+    Symbols: "!@#$%^&*()_+[]{}|;:,.<>?",
+  };
 
+  // Ensure at least one character from each selected type
+  array.forEach((type) => {
+    if (types[type]) {
+      password += getRandomCharacter(type);
+    }
+  });
+
+  // Fill the rest of the password to match the desired length
+  const allSelectedCharacters = array
+    .map((type) => types[type])
+    .join("");
+
+  while (password.length < length) {
+    password += allSelectedCharacters[
+      Math.floor(Math.random() * allSelectedCharacters.length)
+    ];
   }
 
-  if (array.find((item) => item === "Lovercase")) {
-    
-  }
+  // Shuffle the password to make it more random
+  password = password
+    .split("")
+    .sort(() => Math.random() - 0.5)
+    .join("");
 
-  if (array.find((item) => item === "Numbers")) {
-    
-  }
+  console.log(password);
+  return password;
+}
 
-  if (array.find((item) => item === "Symbols")) {
-    
-  }
-  return 7546584;
+function getRandomCharacter(type) {
+  const types = {
+    Uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    Lovercase: "abcdefghijklmnopqrstuvwxyz",
+    Numbers: "0123456789",
+    Symbols: "!@#$%^&*()_+[]{}|;:,.<>?",
+  };
+
+  return types[type][Math.floor(Math.random() * types[type].length)];
 }
 
 checkPasswordComplexity(slider.value, sumCheckboxes);
