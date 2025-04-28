@@ -19,7 +19,6 @@ checkboxes.forEach((checkbox) => {
 
         /* Every time when "click" we got a number of checked checkboxes*/
         quantityCheckboxes = sumCheckboxes(); 
-        console.log(`Чекбокс "${value}" был ${state ? 'нажат ✅' : 'отжат ❌'}`);
         checkPasswordComplexity(slider.value, quantityCheckboxes);
     });
 });
@@ -35,8 +34,6 @@ createBtn.addEventListener("click", () => {
           chosenCheckboxesArray.push(checkbox.name);
       }
     })
-    console.log(slider.value)
-    console.log(chosenCheckboxesArray);
 
     /* generate password */
     outputText.value = generatePassword(chosenCheckboxesArray, slider.value);
@@ -125,7 +122,6 @@ function generatePassword(array, length) {
     .sort(() => Math.random() - 0.5)
     .join("");
 
-  console.log(password);
   return password;
 }
 
