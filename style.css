@@ -383,3 +383,9 @@ main {
     background-color: var(--green-200);
     border-color: var(--green-200);
 }
+
+@media (min-width: 768px) {
+    .password-generator {
+        max-width: 43.5rem;
+    }
+}
